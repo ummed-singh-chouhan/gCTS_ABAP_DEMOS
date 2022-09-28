@@ -44,15 +44,15 @@ stages:
         displayName: gCTS Deploy
       #- script: |
           #bin/piper gctsDeploy --verbose --client $(ABAP-CLIENT) --host $(ABAP-HOST) --password $(ABAP-PW) --repository $(GCTS-REPO) --username $(DEMOCREDS) --remoteRepositoryURL $(REPO-URL) --vSID $(SID) --commit "0d264a0"
-        - task: Bash@3
-          inputs:
-            targetType: 'inline'
-            script: |
-              # Write your commands here
+      - task: Bash@3
+        inputs:
+          targetType: 'inline'
+          script: |
+            # Write your commands here
               
-              echo 'Hello world'
+            echo 'Hello world'
               
-              bin/piper gctsDeploy --verbose --client $(ABAP-CLIENT) --host $(ABAP-HOST) --password $(ABAP-PW) --repository $(GCTS-REPO) --username $(DEMOCREDS) --remoteRepositoryURL $(REPO-URL) --vSID $(SID) --commit "0d264a0"
+          bin/piper gctsDeploy --verbose --client $(ABAP-CLIENT) --host $(ABAP-HOST) --password $(ABAP-PW) --repository $(GCTS-REPO) --username $(DEMOCREDS) --remoteRepositoryURL $(REPO-URL) --vSID $(SID) --commit "0d264a0"
   - stage: ABAP_Quality_Checks
     jobs:
     - job: executeABAPQualityChecks
