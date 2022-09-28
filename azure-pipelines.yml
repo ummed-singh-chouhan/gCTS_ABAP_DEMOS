@@ -55,7 +55,7 @@ stages:
           bin/piper gctsDeploy --verbose --client $(ABAP-CLIENT) --host $(ABAP-HOST) --password $(ABAP-PW) --repository $(GCTS-REPO) --username $(DEMOCREDS) --remoteRepositoryURL $(REPO-URL) --vSID $(SID) --commit "0d264a0"
 
 
-  - stage: ABAP_Quality_Checks
+  #- stage: ABAP_Quality_Checks
     jobs:
     - job: executeABAPQualityChecks
       #variables:
