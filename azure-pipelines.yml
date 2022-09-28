@@ -53,22 +53,3 @@ stages:
             echo 'Hello world'
               
           bin/piper gctsDeploy --verbose --client $(ABAP-CLIENT) --host $(ABAP-HOST) --password $(ABAP-PW) --repository $(GCTS-REPO) --username $(DEMOCREDS) --remoteRepositoryURL $(REPO-URL) --vSID $(SID) --commit "0d264a0"
-
-
-  #- stage: ABAP_Quality_Checks
-    jobs:
-    - job: executeABAPQualityChecks
-      #variables:
-      #- group: development
-      pool:
-        vmImage: 'ubuntu-latest'
-      steps:
-      - task: Cache@2
-        inputs:
-          key: piper-cli-official
-          path: bin 
-        displayName: "ABAP Checks"
-      - script: |
-          bin/piper gctsExecuteABAPQualityChecks --verbose --client $(ABAP-CLIENT) --host $(ABAP-HOST) --password $(ABAP-PW) --repository $(GCTS-REPO) --username $(ABAP-USER) --remoteRepositoryURL $(REPO-URL) --vSID $(SID) --commit "0d264a0"
-
-
