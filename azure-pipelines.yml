@@ -34,8 +34,8 @@ stages:
     - job: gctsDeploy
       #variables:
       #- group: development
-      pool:
-        vmImage: 'ubuntu-latest'
+      #pool:
+       # vmImage: 'ubuntu-latest'
       steps:
       - task: Cache@2
         inputs:
