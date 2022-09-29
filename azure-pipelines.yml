@@ -52,4 +52,4 @@ stages:
               
             echo 'Hello world'
               
-            bin/piper gctsDeploy --verbose --ignoreCustomDefaults --host $(ABAP-HOST) --username $(DEMOCREDS) --password $(ABAP-PW) --client $(ABAP-CLIENT)   --repository $(GCTS-REPO)  --remoteRepositoryURL $(REPO-URL) --vSID $(SID) --commit "0d264a0"
+            bin/piper gctsDeploy --verbose --ignoreCustomDefaults --host $(ABAP-HOST) --username $(DEMOCREDS) --password $(ABAP-PW) --client $(ABAP-CLIENT)   --repository $(GCTS-REPO)  --remoteRepositoryURL $(REPO-URL) --role TARGET --vSID $(SID) --commit "0d264a0"
