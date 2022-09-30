@@ -26,7 +26,7 @@ steps:
  - script: bin/piper version
    displayName: 'Piper Version'
  - task: Cache@2
-    inputs:
+   inputs:
     key: piper-cli-official
     path: bin 
    displayName: gCTS Deploy  
@@ -34,7 +34,7 @@ steps:
     bin/piper gctsDeploy --verbose --client $(ABAP-CLIENT) --host $(ABAP-HOST) --password $(ABAP-PW) --repository $(GCTS-REPO) --username $(DEMOCREDS) --remoteRepositoryURL $(REPO-URL) --vSID $(SID) --commit "0d264a0"
    displayName: "ABAP Checks"
  - task: Cache@2
-    inputs:
+   inputs:
     key: piper-cli-official
     path: bin 
    displayName: gCTS ExecuteABAPQualityChecks   
