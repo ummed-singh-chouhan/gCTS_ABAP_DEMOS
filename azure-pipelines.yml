@@ -21,15 +21,15 @@ steps:
     key: piper-cli-official
     path: bin
     cacheHitVar: FOUND_PIPER
-  displayName: Cache piper cli binary
+   displayName: Cache piper cli binary
  - script: |
     mkdir -p bin
     curl -L --output bin/piper https://github.com/SAP/jenkins-library/releases/latest/download/piper_master
     chmod +x bin/piper
-  condition: ne(variables.FOUND_PIPER, 'true')
-  displayName: 'Download Piper'
+   condition: ne(variables.FOUND_PIPER, 'true')
+   displayName: 'Download Piper'
  - script: bin/piper version
-  displayName: 'Piper Version'
+   displayName: 'Piper Version'
 
 # task: Cache@2
 # inputs:
