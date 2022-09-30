@@ -31,7 +31,6 @@ steps:
  - script: bin/piper version
    displayName: 'Piper Version'
 
-steps:
   - task: Cache@2
     inputs:
       key: piper-cli-official
