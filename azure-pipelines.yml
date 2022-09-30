@@ -5,12 +5,15 @@
 
 trigger:
 - main
-stages:
-  - stage: Download_Piper
-    jobs:
-      - job: downloadPiper
-        pool:
-          vmImage: ubuntu-latest
+
+pool:
+  vmImage: ubuntu-latest
+
+# stages:
+#   - stage: Download_Piper
+#     jobs:
+#       - job: downloadPiper
+        
         steps:
         - checkout: none
         - task: Cache@2
@@ -28,14 +31,14 @@ stages:
         - script: bin/piper version
           displayName: 'Piper Version'
 
-####### Piper Libraries #####
-  - stage: gCTDS_Deploy
-    jobs:
-    - job: gctsDeploy
-      #variables:
-      #- group: development
-      #pool:
-       # vmImage: 'ubuntu-latest'
+# ####### Piper Libraries #####
+#   - stage: gCTDS_Deploy
+#     jobs:
+#     - job: gctsDeploy
+#       #variables:
+#       #- group: development
+#       #pool:
+#        # vmImage: 'ubuntu-latest'
       steps:
       - task: Cache@2
         inputs:
