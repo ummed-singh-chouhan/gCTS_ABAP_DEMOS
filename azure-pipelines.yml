@@ -5,17 +5,18 @@
 
 trigger:
 - main
-steps:
- - checkout: none
+
 pool:
   vmImage: ubuntu-latest
+steps:
+ - checkout: none  
 
-- task: Cache@2
-  inputs:
+ - task: Cache@2
+   inputs:
     key: piper-cli-official
     path: bin
     cacheHitVar: FOUND_PIPER
-  displayName: Cache piper cli binary
+   displayName: Cache piper cli binary
  - script: |
     mkdir -p bin
     curl -L --output bin/piper https://github.com/SAP/jenkins-library/releases/latest/download/piper_master
