@@ -5,7 +5,8 @@
 
 trigger:
 - main
-
+steps:
+ - checkout: none
 pool:
   vmImage: ubuntu-latest
 
