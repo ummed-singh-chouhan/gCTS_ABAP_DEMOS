@@ -27,6 +27,7 @@ stages:
           displayName: 'Download Piper'
         - script: bin/piper version
           displayName: 'Piper Version'
+        - script: bin/piper getConfig --contextConfig --stepMetadata .pipeline/tmp/metadata/gctsDeploy.yaml  
 
 ####### Piper Libraries #####
   - stage: gCTDS_Deploy
